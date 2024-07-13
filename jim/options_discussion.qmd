@@ -1,0 +1,105 @@
+---
+title: "Untitled"
+format: html
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+## LSR Reading Group - Tuesday, July 9, 2024
+
+-   Data Science Learning Community Video:
+-   https://www.youtube.com/playlist?list=PL3x6DOfs2NGiuZtoxH4AMSs1ipevg0YFH
+
+
+## Decimal Places
+
+Default:
+```{r}
+pi
+x=10.123456789
+```
+
+## To change digits, suggest  get/set digits option
+
+```{r}
+pi
+x
+# value now?
+getOption("digits")
+
+# set option
+options("digits" = 7)
+
+getOption("digits")
+
+pi
+x 
+
+# Now default is 7, but suppose for this calculation only want 4
+round(pi, digits=4)
+
+# Not:
+round(pi, digits=10)
+
+# note rounds!
+round(x, digits=4)
+```
+
+# Why?
+```{r}
+round(pi)
+
+# To see code in function:
+# Note digits=0 is default!
+round
+```
+
+## R has many options 
+```{r}
+options()
+length(options())
+
+# in Help pane (in Rstudio)
+help(options)
+```
+
+## Notes
+
+- for help `r ?options`
+- or, `r help(options)`
+- to see variations to get/set options
+
+
+
+
+# LSR
+```{r}
+# install.packages("lsr")
+
+library("lsr")
+
+# Getting Help
+help(package="lsr")
+?lsr::who
+
+cats = 4
+who()
+```
+
+# Examine afl.margins
+```{r}
+X = load("~/code/LSR_rbook/bookdown/data/aflsmall.Rdata")
+afl.margins
+afl.finalists
+plot(afl.margins)
+
+m = mean(afl.margins)
+abline(h=m, col="blue")
+
+median = median(afl.margins)
+abline(h=median, col="red")
+```
+
+```{r}
+hist(afl.margins)
+```

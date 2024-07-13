@@ -1,9 +1,7 @@
 ---
 output:
-  html_document: default
   pdf_document: default
-editor_options: 
-  chunk_output_type: console
+  html_document: default
 ---
 # Descriptive statistics{#descriptives}
 
